@@ -22,7 +22,7 @@ def mass(attacker,lists):
 		url="http://zone-h.com/notify/single"
 		for i in range(len(f)):
 			payload={'defacer':attacker,'domain1':f[i].strip('\n'),'hackmode':1,'reason':1}
-			r=requests.post(url,data=payload)
+			r=requests.post(url,data=payload,headers={"Referer": "http://www.zone-h.org/","User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0"})
 			if 'OK' in r.text:
 				print (good("Done Posting ! "+f[i].strip('\n')))
 			else:
