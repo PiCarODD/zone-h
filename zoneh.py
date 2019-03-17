@@ -1,5 +1,6 @@
 import requests
 from huepy import *
+form time import *
 print (green(""" _____                       _     
 / _  / ___  _ __   ___      | |__  
 \// / / _ \| '_ \ / _ \_____| '_ \ 
@@ -22,11 +23,15 @@ def mass(attacker,lists):
 		url="http://zone-h.com/notify/single"
 		for i in range(len(f)):
 			payload={'defacer':attacker,'domain1':f[i].strip('\n'),'hackmode':1,'reason':1}
-			r=requests.post(url,data=payload,headers={"Referer": "http://www.zone-h.org/","User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0"})
+			r=requests.post(url,data=payload,headers={"Referer": "http://www.zone-h.org/"})
 			if 'OK' in r.text:
 				print (good("Done Posting ! "+f[i].strip('\n')))
 			else:
 				print(bad("Invalid Domain or domain has been defaced ! "+f[i].strip('\n')))
+		sleep(3)
+		print "......."
+		sleep(3)
+		print (info("Enjoy my tool and give me stars fuck you!"))
 if attacktype=="1":
 	name=raw_input("Attacker Name : ")
 	url=raw_input("Attacked website : ")
